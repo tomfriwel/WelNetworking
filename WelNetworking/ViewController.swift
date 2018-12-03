@@ -12,15 +12,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         let api = API()
-        api.post(url:"", data: ["b":"a"], params: [:]){ (responseObject:NSDictionary?, error:NSError?) in
-            if ((error) != nil) {
-                print("Error logging you in!")
-            } else {
-                print(responseObject as Any)
-            }
-        }
+        
+        api.run(baseurl: API.book.getList.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
+            print(resp as Any)
+        })
     }
     
     
