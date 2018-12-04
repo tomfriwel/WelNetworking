@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class RequestOperation: Operation {
+    let requestObject:RequestObject
+    
+    init(requestObject:RequestObject) {
+        self.requestObject = requestObject
+        
+    }
+    
+    override func main() {
+        if isCancelled {
+            return
+        }
+        
+        
+    }
+}

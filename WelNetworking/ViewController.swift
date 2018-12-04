@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let api = API()
+//        let api = API()
+//
+//        api.run(baseurl: API.book.getList.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
+//            print(resp as Any)
+//        })
         
-        api.run(baseurl: API.book.getList.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
-            print(resp as Any)
-        })
     }
     
     

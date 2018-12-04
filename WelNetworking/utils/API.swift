@@ -13,6 +13,13 @@ typealias ResponseError = (Any?) -> Void
 
 
 class API:NSObject {
+    lazy var postsInProgress:[IndexPath: Operation] = [:]
+    lazy var postQueue:OperationQueue = {
+        var queue = OperationQueue()
+        queue.name = "Post queue"
+        return queue
+    }()
+    
     var success:(Response)?
     var fail:(ResponseError)?
     
