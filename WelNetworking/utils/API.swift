@@ -78,7 +78,6 @@ class API {
             urlComponents.queryItems = params.map { URLQueryItem(name: $0.key, value: $0.value) }
         }
         
-        print(urlComponents.url?.absoluteString as Any)
         var request = URLRequest(url: urlComponents.url!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -89,26 +88,28 @@ class API {
                 self.fail?(error)
             }
         }
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(String(describing: error))")
-                return
+        self.postQueue.addOperation {
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                    print("error=\(String(describing: error))")
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(String(describing: response))")
+                }
+                
+                let responseString = String(data: data, encoding: .utf8)
+                let dict = self.convertToDictionary(text: responseString!)
+                
+                if dict != nil {
+                    self.success?(dict! as NSDictionary)
+                } else {
+                    self.fail?(responseString)
+                }
             }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(String(describing: response))")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            let dict = self.convertToDictionary(text: responseString!)
-            
-            if dict != nil {
-                self.success?(dict! as NSDictionary)
-            } else {
-                self.fail?(responseString)
-            }
+            task.resume()
         }
-        task.resume()
     }
 }

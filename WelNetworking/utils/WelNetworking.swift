@@ -20,14 +20,5 @@ class WelNetworking {
     }()
     
     init(urlString:String, data:[String:Any]=[:], params:[String: Any]=[:]) {
-//        let task = URLSession.shared.dataTask(with: self.requestObject.request) { data, response, error in
-//            print(2)
-//            if let error = error {
-//            } else if let data = data,
-//                let response = response as? HTTPURLResponse,
-//                response.statusCode == 200 {
-//            }
-//        }
-//        task.resume()
     }
 }

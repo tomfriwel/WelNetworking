@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var displayLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
-        _ = API().run(baseurl: API.book.getValue.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
+        _ = API().run(baseurl: API.book.getList.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
             print(resp as Any)
+            OperationQueue.main.addOperation {
+                self.displayLabel.text = "Success"
+            }
         }).fail(fail: { error in
             print(error as Any)
         })
