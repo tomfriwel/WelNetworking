@@ -15,6 +15,7 @@
 		CF047AF021B4D92C002280BF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF047AEF21B4D92C002280BF /* API.swift */; };
 		CF702FC021B647D20038DFF0 /* RequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF702FBF21B647D20038DFF0 /* RequestOperation.swift */; };
 		CF702FC221B648170038DFF0 /* RequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF702FC121B648170038DFF0 /* RequestObject.swift */; };
+		CF702FC421B66FD10038DFF0 /* WelNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF702FC321B66FD10038DFF0 /* WelNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CF047AEF21B4D92C002280BF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CF702FBF21B647D20038DFF0 /* RequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOperation.swift; sourceTree = "<group>"; };
 		CF702FC121B648170038DFF0 /* RequestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObject.swift; sourceTree = "<group>"; };
+		CF702FC321B66FD10038DFF0 /* WelNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				CF047AEF21B4D92C002280BF /* API.swift */,
 				CF702FBF21B647D20038DFF0 /* RequestOperation.swift */,
 				CF702FC121B648170038DFF0 /* RequestObject.swift */,
+				CF702FC321B66FD10038DFF0 /* WelNetworking.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				CF047ADF21B4D8D9002280BF /* ViewController.swift in Sources */,
 				CF047AF021B4D92C002280BF /* API.swift in Sources */,
+				CF702FC421B66FD10038DFF0 /* WelNetworking.swift in Sources */,
 				CF047ADD21B4D8D9002280BF /* AppDelegate.swift in Sources */,
 				CF702FC221B648170038DFF0 /* RequestObject.swift in Sources */,
 				CF702FC021B647D20038DFF0 /* RequestOperation.swift in Sources */,

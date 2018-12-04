@@ -13,7 +13,6 @@ class RequestOperation: Operation {
     
     init(requestObject:RequestObject) {
         self.requestObject = requestObject
-        
     }
     
     override func main() {
@@ -21,6 +20,23 @@ class RequestOperation: Operation {
             return
         }
         
+        print(1)
+        
+        let task = URLSession.shared.dataTask(with: self.requestObject.request) { data, response, error in
+            print(2)
+            if let error = error {
+            } else if let data = data,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+            }
+        }
+        task.resume()
+        
+        
+        print(3)
+        if isCancelled {
+            return
+        }
         
     }
 }

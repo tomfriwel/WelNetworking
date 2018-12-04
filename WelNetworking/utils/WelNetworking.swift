@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+class WelNetworking {
+    lazy var postsInProgress:[IndexPath: Operation] = [:]
+    lazy var postQueue:OperationQueue = {
+        var queue = OperationQueue()
+        queue.name = "Post queue"
+        queue.maxConcurrentOperationCount = 1
+        queue.isSuspended = true
+        queue.qualityOfService = .utility
+        return queue
+    }()
+    
+    init(urlString:String, data:[String:Any]=[:], params:[String: Any]=[:]) {
+//        let task = URLSession.shared.dataTask(with: self.requestObject.request) { data, response, error in
+//            print(2)
+//            if let error = error {
+//            } else if let data = data,
+//                let response = response as? HTTPURLResponse,
+//                response.statusCode == 200 {
+//            }
+//        }
+//        task.resume()
+    }
+}

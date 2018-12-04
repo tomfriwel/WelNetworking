@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let api = API()
-//
-//        api.run(baseurl: API.book.getList.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
-//            print(resp as Any)
-//        })
+
+        _ = API().run(baseurl: API.book.getValue.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
+            print(resp as Any)
+        }).fail(fail: { error in
+            print(error as Any)
+        })
         
+//        let op = RequestOperation(requestObject: RequestObject(urlString: "https://www.easy-mock.com/mock/5b9b22636a29d2427a5d90a6/apitest/book/getList"))
+//        op.start()
     }
     
     

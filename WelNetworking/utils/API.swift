@@ -12,7 +12,7 @@ typealias Response = (NSDictionary?) -> Void
 typealias ResponseError = (Any?) -> Void
 
 
-class API:NSObject {
+class API {
     lazy var postsInProgress:[IndexPath: Operation] = [:]
     lazy var postQueue:OperationQueue = {
         var queue = OperationQueue()
@@ -31,7 +31,8 @@ class API:NSObject {
     }
     
     enum book:String {
-        case getList = "/movie/getList"
+        case getList = "/movie/getList",
+        getValue = "/movie/getValue"
     }
     
     enum special:String {
@@ -54,12 +55,14 @@ class API:NSObject {
         return nil
     }
     
-    func success(success: @escaping Response) {
+    func success(success: @escaping Response)->Self {
         self.success = success
+        return self
     }
     
-    func fail(fail: @escaping ResponseError) {
+    func fail(fail: @escaping ResponseError)->Self {
         self.fail = fail
+        return self
     }
     
     func run(baseurl: String, data:Dictionary<String, String> = [:], params:Dictionary<String, String> = [:]) -> Self {
