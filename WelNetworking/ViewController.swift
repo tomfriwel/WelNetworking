@@ -11,22 +11,32 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        _ = API().run(baseurl: API.book.getList.rawValue, data: ["b":"a"], params: [:]).success(success: {resp in
-            print(resp as Any)
-            OperationQueue.main.addOperation {
-                self.displayLabel.text = "Success"
-            }
-        }).fail(fail: { error in
-            print(error as Any)
-        })
         
-//        let op = RequestOperation(requestObject: RequestObject(urlString: "https://www.easy-mock.com/mock/5b9b22636a29d2427a5d90a6/apitest/book/getList"))
-//        op.start()
+        _ = RequestObject(apiurl: API.book.getList.rawValue).success(success: {data in
+            print(data as Any)
+            do {
+                let str = String.init(data: try JSONSerialization.data(withJSONObject: data ?? [:], options: .prettyPrinted), encoding: .utf8)
+                DispatchQueue.main.async {
+                    self.displayLabel.text = str
+                }
+            } catch {
+            }
+        })
     }
     
-    
+    @IBAction func reload(_ sender: Any) {
+        _ = RequestObject(apiurl: API.movie.getList.rawValue).success(success: {data in
+            do {
+                let str = String.init(data: try JSONSerialization.data(withJSONObject: data ?? [:], options: .prettyPrinted), encoding: .utf8)
+                DispatchQueue.main.async {
+                    self.displayLabel.text = str
+                }
+            } catch {
+            }
+        })
+    }
 }
 

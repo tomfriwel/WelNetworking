@@ -16,6 +16,7 @@
 		CF702FC021B647D20038DFF0 /* RequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF702FBF21B647D20038DFF0 /* RequestOperation.swift */; };
 		CF702FC221B648170038DFF0 /* RequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF702FC121B648170038DFF0 /* RequestObject.swift */; };
 		CF702FC421B66FD10038DFF0 /* WelNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF702FC321B66FD10038DFF0 /* WelNetworking.swift */; };
+		CF702FC621B7707F0038DFF0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF702FC521B7707F0038DFF0 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CF702FBF21B647D20038DFF0 /* RequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOperation.swift; sourceTree = "<group>"; };
 		CF702FC121B648170038DFF0 /* RequestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObject.swift; sourceTree = "<group>"; };
 		CF702FC321B66FD10038DFF0 /* WelNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelNetworking.swift; sourceTree = "<group>"; };
+		CF702FC521B7707F0038DFF0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				CF047AEF21B4D92C002280BF /* API.swift */,
+				CF702FC521B7707F0038DFF0 /* Network.swift */,
 				CF702FBF21B647D20038DFF0 /* RequestOperation.swift */,
 				CF702FC121B648170038DFF0 /* RequestObject.swift */,
 				CF702FC321B66FD10038DFF0 /* WelNetworking.swift */,
@@ -160,6 +163,7 @@
 				CF702FC421B66FD10038DFF0 /* WelNetworking.swift in Sources */,
 				CF047ADD21B4D8D9002280BF /* AppDelegate.swift in Sources */,
 				CF702FC221B648170038DFF0 /* RequestObject.swift in Sources */,
+				CF702FC621B7707F0038DFF0 /* Network.swift in Sources */,
 				CF702FC021B647D20038DFF0 /* RequestOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
